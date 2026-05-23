@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+@custom-variant group-hover (.group:hover &);
+
 .fnt-bungee {
   font-family: "Bungee", sans-serif;
   font-weight: 400;

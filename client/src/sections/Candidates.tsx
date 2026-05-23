@@ -1,38 +1,98 @@
+import { Candidate } from '@/components/Candidate';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import banner from '@/assets/banner-example.png'
+import 'swiper/css';
+import 'swiper/css/autoplay';
+
 export function Candidates() {
   return (
-    <section className="mx-6 py-10">
+    <section className="px-6 py-10 relative w-full">
       <div>
-        <h1 className="fnt-bungee text-xl bg-black text-yellow-400 w-fit py-1 px-2 -rotate-2">Our Candidates</h1>
-        <p className="mt-2">Meet our candidates from different political parties and see their platforms.</p>
+        <h1 className="fnt-bungee text-xl bg-black text-yellow-400 w-fit py-1 px-2 -rotate-2">
+          Our Candidates
+        </h1>
+        <p className="mt-2">
+          Meet our candidates from different political parties and see their platforms.
+        </p>
       </div>
 
       <div className="mt-8">
-
-        <div className="bg-yellow-400">
-          <div className="bg-yellow-50 border-2 border-black border-b-6" style={{
-            marginBottom: '6px',
-            marginRight: '6px',
-            marginLeft: '-8px',
-            marginTop: '-8px',
-            transition: 'all 0.15s ease',
-          }}>
-          <span className="text-gray-600 text-xs bg-black text-yellow-400 px-2 py-[2px] w-fit fnt-bungee">Running for President</span>
-          
-            <div className="mx-2 my-2">
-              <img className="h-52 w-full object-cover border-black border-b-4 border-r-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZ1ZrXY56PlXBaAMad_9P_TH8_PYGoFrbQcxCumgEwA&s=10" alt="Photo" />
+        <Swiper
+          modules={[Autoplay]}
+          allowTouchMove={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          speed={4000}
+          loop={true}
+          spaceBetween={16}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            400: { slidesPerView: 1.1 },
+            640: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3.2 },
+          }}
+          grabCursor={true}
+          className="w-full"
+        >
+          <SwiperSlide>
+            <Candidate
+              name="Jan Liby Dela Costa"
+              description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nunc dolor. Aenean ultricies, libero et placerat pretium, turpis ligula semper tortor, eget commodo neque arcu gravida lectus."}
+              tags={["Independent", "BSIT ITD1"]}
+              image={banner}
+              position={"President"}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Candidate
+              name="Marvin Quillo Saik"
+              description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nunc dolor. Aenean ultricies, libero et placerat pretium, turpis ligula semper tortor, eget commodo neque arcu gravida lectus."}
+              tags={["Independent", "BSIT 2A"]}
+              image={banner}
+              position={"Vice President"}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Candidate
+              name="Rens Acuna"
+              description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nunc dolor. Aenean ultricies, libero et placerat pretium, turpis ligula semper tortor, eget commodo neque arcu gravida lectus."}
+              tags={["Independent", "BSIT 1A" ]}
+              image={banner}
+              position={"Treasurer"}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Candidate
+              name="Sherwin Jefferson Tajan"
+              description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nunc dolor. Aenean ultricies, libero et placerat pretium, turpis ligula semper tortor, eget commodo neque arcu gravida lectus."}
+              tags={["Independent", "BSIT 1A"]}
+              image={banner}
+              position={"P.I.O."}
+            />
+          </SwiperSlide>
+        </Swiper>
+        <div className="mt-6 flex justify-center md:justify-start">
+          <button className="bg-[#f7f2ee] border-black border-2 group" style={{ outline: 'none' }}>
+            <div
+              className="bg-yellow-400 border-black border-2"
+              style={{
+                marginBottom: '4px',
+                marginRight: '4px',
+                marginLeft: '-6px',
+                marginTop: '-6px',
+                transition: 'all 0.15s ease',
+              }}
+              onMouseEnter={e => Object.assign(e.currentTarget.style, { marginBottom: '0px', marginRight: '0px', marginLeft: '-2px', marginTop: '-2px' })}
+              onMouseLeave={e => Object.assign(e.currentTarget.style, { marginBottom: '4px', marginRight: '4px', marginLeft: '-6px', marginTop: '-6px' })}
+            >
+              <p className="py-2 px-4 text-black fnt-bungee">All Candidates</p>
             </div>
-            <div className="my-2 mx-4">
-            
-              <h1 className="fnt-bungee text-lg">Jan Liby Dela Costa</h1>
-              <p className="text-gray-600 text-sm">A results-driven leader dedicated to transparent governance, economic growth, and empowering every citizen.</p>
-              <div className="mt-2 flex gap-2 flex-row pb-2">
-                <span className="bg-yellow-400/20 border-2 border-yellow-200 text-yellow-400 rounded-tl-lg px-2 py-[3px] text-xs">Independent</span>
-                <span className="bg-orange-400/20 border-2 border-orange-200 text-orange-400 rounded-tl-lg px-2 py-[3px] text-xs">BSIT ITD1</span>
-              </div>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </section>
-  )
+  );
 }
