@@ -8,14 +8,8 @@ type CandidateProps = {
 
 export function Candidate({ name, description, image, tags, position }: CandidateProps) {
   return (
-    <div className="bg-yellow-400 pt-2 pl-2">
-      <div className="bg-yellow-50 border-2 border-black border-b-6" style={{
-        marginBottom: '6px',
-        marginRight: '6px',
-        marginLeft: '-8px',
-        marginTop: '-8px',
-        transition: 'all 0.15s ease',
-      }}>
+    <div className="bg-yellow-400 border-b border-yellow-400 pt-2 pl-2">
+      <div className="bg-yellow-50 border-2 border-black border-b-6 mb-[6px] mr-[6px] -ml-[8px] -mt-[8px]">
         <span className="text-gray-600 text-xs bg-black text-yellow-400 px-2 py-[2px] w-fit fnt-bungee">Running for {position}</span>
 
         <div className="mx-2 my-2">

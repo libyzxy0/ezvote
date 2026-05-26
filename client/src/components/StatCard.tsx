@@ -9,13 +9,7 @@ export function StatCard({ icon, value, label }: StatCardProps) {
     <div className="bg-yellow-400 pt-2 pl-2">
       
       <div
-        className="bg-yellow-50 border-2 border-black border-b-6 p-4 text-center"
-        style={{
-          marginBottom: "6px",
-          marginRight: "6px",
-          marginLeft: "-8px",
-          marginTop: "-8px",
-        }}
+        className="bg-yellow-50 border-2 border-black border-b-6 p-4 text-center mb-[6px] mr-[6px] -ml-[8px] -mt-[8px]"
       >
 
         <div className="flex justify-center text-black mb-2">
