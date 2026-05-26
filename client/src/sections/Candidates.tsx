@@ -77,16 +77,7 @@ export function Candidates() {
         <div className="mt-6 flex justify-center md:justify-start">
           <button className="bg-[#f7f2ee] border-black border-2 group" style={{ outline: 'none' }}>
             <div
-              className="bg-yellow-400 border-black border-2"
-              style={{
-                marginBottom: '4px',
-                marginRight: '4px',
-                marginLeft: '-6px',
-                marginTop: '-6px',
-                transition: 'all 0.15s ease',
-              }}
-              onMouseEnter={e => Object.assign(e.currentTarget.style, { marginBottom: '0px', marginRight: '0px', marginLeft: '-2px', marginTop: '-2px' })}
-              onMouseLeave={e => Object.assign(e.currentTarget.style, { marginBottom: '4px', marginRight: '4px', marginLeft: '-6px', marginTop: '-6px' })}
+              className="bg-yellow-400 border-black border-2 mb-[4px] mr-[4px] -ml-[6px] -mt-[6px] transition-all duration-150 hover:mb-0 hover:mr-0 hover:-ml-[2px] hover:-mt-[2px]"
             >
               <p className="py-2 px-4 text-black fnt-bungee">All Candidates</p>
             </div>
